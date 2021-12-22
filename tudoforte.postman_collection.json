@@ -1,0 +1,196 @@
+{
+	"variables": [],
+	"info": {
+		"name": "tudoforte",
+		"_postman_id": "95622f18-3202-ae8b-b75e-98a9143f7bc3",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "produto todos",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "http://localhost/tudoforte/records/produto/"
+			},
+			"response": []
+		},
+		{
+			"name": "produto filtro nome",
+			"request": {
+				"url": {
+					"raw": "http://localhost/tudoforte/records/produto/?filter=nom_produto,cs,Creme",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"tudoforte",
+						"records",
+						"produto",
+						""
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "nom_produto,cs,Creme",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "http://localhost/tudoforte/records/produto/"
+			},
+			"response": []
+		},
+		{
+			"name": "produto filtro referencia",
+			"request": {
+				"url": {
+					"raw": "http://localhost/tudoforte/records/produto/?filter=ref_produto,eq,2187709",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"tudoforte",
+						"records",
+						"produto",
+						""
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "ref_produto,eq,2187709",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "http://localhost/tudoforte/records/produto/"
+			},
+			"response": []
+		},
+		{
+			"name": "produto filtro  Nome + referencia",
+			"request": {
+				"url": {
+					"raw": "http://localhost/tudoforte/records/produto/?filter=ref_produto,eq,2187709&filter,cs=aranha",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"tudoforte",
+						"records",
+						"produto",
+						""
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "ref_produto,eq,2187709",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "filter,cs",
+							"value": "aranha",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "http://localhost/tudoforte/records/produto/"
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta venda",
+			"request": {
+				"url": {
+					"raw": "http://localhost/tudoforte/records/vvenda_produto/?filter=cod_venda,eq,1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"tudoforte",
+						"records",
+						"vvenda_produto",
+						""
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "cod_venda,eq,1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "http://localhost/tudoforte/records/produto/"
+			},
+			"response": []
+		},
+		{
+			"name": "Criar venda",
+			"request": {
+				"url": "http://localhost/tudoforte/records/venda/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cod_cliente\": 1,\r\n  \"dsc_endereco_entrega\": \"Rua das flores, 666, são paulo\",\r\n  \"cod_status\": 0,\r\n  \"cod_usu_inc\": \"1\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar produtos à venda cirada",
+			"request": {
+				"url": "http://localhost/tudoforte/records/venda_produto/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"cod_venda\": 2,\r\n      \"cod_produto\": 3,\r\n      \"val_quantidade\": 5,\r\n      \"cod_usu_inc\": \"1\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
